@@ -1,0 +1,23 @@
+{% extends 'users_ash/base.html' %}
+
+    {% block head %}
+        <title>修改密码</title>
+    {% endblock head %}
+
+    {% block content %} 
+    <div class="box">
+        <h1 class="is-uppercase has-text-centered has-text-weight-semibold is-size-2">修改密码
+            <br><span class="tag">修改密码</span>
+        </h1>
+        <hr class="dropdown-divider">
+        <!-- 使用post请求提交敏感数据 -->
+        <form action="" method="post">
+            {% csrf_token %}
+    
+            {{ form.as_p }}
+            {{ form.errors }}
+            <input type="submit" style="margin-top: 1em;" class="button is-link is-fullwidth" value="提交">
+            <div class="is-clearfix"></div>
+        </form>
+    </div>
+    {% endblock content %}
